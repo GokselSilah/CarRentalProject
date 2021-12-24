@@ -101,7 +101,14 @@ namespace ConsoleUI
             List<Rental> rentals = new List<Rental>()
             {
                 new Rental() { CarId =2, UserId = 2, RentDate = DateTime.Now, ReturnDate = DateTime.Now },
-                new Rental() { CarId =3, UserId = 4, RentDate = DateTime.Now, }
+                new Rental() { CarId =2, UserId = 4, RentDate = DateTime.Now },
+                new Rental() { CarId =3, UserId = 5, RentDate = DateTime.Now },
+                new Rental() { CarId =3, UserId = 5, ReturnDate = DateTime.Now },
+                new Rental() {CarId =3, UserId = 4, RentDate= new DateTime(2022,01,01 ) },
+                new Rental() {CarId =3, UserId = 4, RentDate= DateTime.Now }
+
+
+
 
             };
 

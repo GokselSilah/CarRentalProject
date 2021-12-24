@@ -48,22 +48,25 @@ namespace Business.Concrete
         }
 
         public IResult Add(Rental rental)
-        {           
-
-            if (rental.ReturnDate < rental.RentDate)
+        {
+            foreach (var car in _rentalDal.GetAll())
             {
-                for (int i = 0; i < _rentalDal.GetAll().Count; i++)
+                if (rental.CarId == car.CarId)
                 {
-                    if(rental.CarId == _rentalDal.GetAll()[i].CarId)
+                    if (car.ReturnDate>DateTime.Now )
                     {
                         return new ErrorResult(Messages.AddedFailed);
+
                     }
                 }
-            }           
-                _rentalDal.Add(rental);
-                return new SuccessResult(Messages.AddedSuccess);
-            
-            
+            }
+
+            _rentalDal.Add(rental);
+            return new SuccessResult(Messages.AddedSuccess);
+
+
+
+
         }
     }
 }
