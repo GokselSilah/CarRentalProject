@@ -45,7 +45,7 @@ namespace ConsoleUI
             //    colorManager.Add(color);
             //}
 
-            CarManager carManager = new CarManager(new EfCarDal());
+            //CarManager carManager = new CarManager(new EfCarDal());
 
             //List<Car> cars = new List<Car>()
             //{
@@ -65,11 +65,50 @@ namespace ConsoleUI
 
 
 
-            foreach (var car in carManager.GetCarDetails())
-            {
-                Console.WriteLine("{0}-{1} markalı {2} aracı günlük {3} TL karşılığında kiralayabilirsiniz.",car.BrandName,car.Description,car.ColorName,car.DailyPrice);
-            }
+            //foreach (var car in carManager.GetCarDetails().Data)
+            //{
+            //    Console.WriteLine("{0}-{1} markalı {2} aracı günlük {3} TL karşılığında kiralayabilirsiniz.",car.BrandName,car.Description,car.ColorName,car.DailyPrice);
+            //}
 
+            //CustomerManager customerManager = new CustomerManager(new EfCustomerDal());
+
+            //List<Customer> customers = new List<Customer>()
+            //{
+            //    new Customer() { UserId=4},
+            //    new Customer() { UserId=5}
+
+            //    new Customer() {CompanyName="İzmir Torbalı Mesleki Eğitim Tic. Ltd. Şti", UserId=2},
+            //    new Customer() {CompanyName="İzmir Torbalı Mesleki Eğitim Tic. Ltd. Şti", UserId=3},
+            //    new Customer() {CompanyName="Projera Danışmanlık", UserId=6}
+            //};
+
+
+            //foreach (var customer in customers)
+            //{
+            //    customerManager.Add(customer);
+            //}
+
+
+            //UserManager userManager = new UserManager(new EfUserDal());
+
+            //foreach (var user in userManager.GetAll().Data)
+            //{
+            //    Console.WriteLine("{0}-{1}",user.FirstName,user.LastName);
+            //}
+
+            RentalManager rentalManager = new RentalManager(new EfRentalDal());
+
+            List<Rental> rentals = new List<Rental>()
+            {
+                new Rental() { CarId =2, UserId = 2, RentDate = DateTime.Now, ReturnDate = DateTime.Now },
+                new Rental() { CarId =3, UserId = 4, RentDate = DateTime.Now, }
+
+            };
+
+            foreach (var rent in rentals)
+            {
+                rentalManager.Add(rent);
+            }
         }
     }
 }
