@@ -42,9 +42,9 @@ namespace Business.Concrete
             return new SuccessDataResult<User>(_userDal.Get(u => u.UserId == id));
         }
 
-        public IDataResult<List<UserDetailDto>> GetCarDetails()
+        public IDataResult<List<UserDetailDto>> GetUserDetails()
         {
-            return new SuccessDataResult<List<UserDetailDto>>(_userDal.GetCarDetails());
+            return new SuccessDataResult<List<UserDetailDto>>(_userDal.GetUserDetails());
         }
 
         public IResult Update(User user)

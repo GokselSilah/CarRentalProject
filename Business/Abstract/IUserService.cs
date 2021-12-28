@@ -16,6 +16,6 @@ namespace Business.Abstract
         IResult Add(User user);
         IResult Update(User user);
         IResult Delete(User user);
-        IDataResult<List<UserDetailDto>> GetCarDetails();
+        IDataResult<List<UserDetailDto>> GetUserDetails();
     }
 }
